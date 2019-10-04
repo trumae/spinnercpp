@@ -1,0 +1,78 @@
+* spinnercpp
+
+spinnercpp is a simple header only library to add a spinner / progress indicator to any terminal application. spinnercpp is based in [https://github.com/briandowns/spinner]
+
+Contributions welcome!
+
+** Features
+
+* Start
+* Stop
+* Restart
+* Update the spinner speed
+* Prefix or append text
+* Output final string on spinner/indicator completion
+
+** Examples
+
+
+*** Simple use
+
+#+BEGIN_SRC 
+#include "../../spinnercpp.h"
+
+int main() {
+  auto spin = std::make_unique<spinnercpp::spinner>();
+  spin->start();
+  std::this_thread::sleep_for(std::chrono::milliseconds(3000)); 
+  
+  return 0;
+}
+#+END_SRC
+
+
+*** Stop
+
+#+BEGIN_SRC 
+#include <iostream>
+#include "../../spinnercpp.h"
+
+using namespace std;
+
+int main() {
+  auto spin = std::make_unique<spinnercpp::spinner>();
+  spin->start();
+  std::this_thread::sleep_for(std::chrono::milliseconds(3000)); 
+  spin->stop();
+
+  cout << "Stop" << endl;
+  
+  return 0;
+}
+#+END_SRC
+
+
+*** Update spin speed and restart the spinner
+
+#+BEGIN_SRC 
+auto spin = std::make_unique<spinnercpp::spinner>(100ms);
+spin->start();
+#+END_SRC
+
+
+*** Choose the spinner
+
+To use the charset 10
+#+BEGIN_SRC 
+auto spin = std::make_unique<spinnercpp::spinner>(100ms, 10); 
+spin->start();
+#+END_SRC
+
+
+*** Preffix and Suffix
+
+#+BEGIN_SRC 
+auto spin = std::make_unique<spinnercpp::spinner>(100ms, 10, "> ", " |"); 
+spin->start();
+#+END_SRC
+
