@@ -6,12 +6,12 @@ Contributions welcome!
 
 ** Features
 
-* Start
-* Stop
-* Restart
-* Update the spinner speed
-* Prefix or append text
-* Output final string on spinner/indicator completion
+- Start
+- Stop
+- Restart
+- Update the spinner speed
+- Prefix or append text
+- Output final string on spinner/indicator completion
 
 ** Examples
 
