@@ -23,17 +23,16 @@ TEST_CASE("simple working") {
 
 
 TEST_CASE("spinnercpp") {
-  auto spin = new spinnercpp::spinner();
-  spin->start();
-  std::this_thread::sleep_for(std::chrono::milliseconds(8000));	
-  spin->stop();
+  {
+    auto spin = std::make_unique<spinnercpp::spinner>(100ms, 10, "final msg", "> ", " |");
+    spin->start();
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+  }
   
-  delete spin;
-  
-  
-  //	{
-  //		auto spin2 = std::unique_ptr<spinnercpp::spinner>();
-  //		spin2->start();
-  //		std::this_thread::sleep_for(std::chrono::milliseconds(8000));
-  //	}
+  for(int i = 0 ; i < spinnercpp::CharSets.size(); i++){
+    cout << endl;
+    auto spin = std::make_unique<spinnercpp::spinner>(100ms, i);
+    spin->start();
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+  }
 }
