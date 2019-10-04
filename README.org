@@ -1,8 +1,10 @@
 * spinnercpp
 
-spinnercpp is a simple header only library to add a spinner / progress indicator to any terminal application. spinnercpp is based in [https://github.com/briandowns/spinner]
+spinnercpp is a simple header only library to add a spinner / progress indicator to any terminal application. spinnercpp is based on [https://github.com/briandowns/spinner]
 
 Contributions welcome!
+
+[[https://1.bp.blogspot.com/-dUjJ_XFIx8c/XZeajOvE7AI/AAAAAAAAF94/r7RJrJDfEs4ybrIPipTHgTFIUykfgUciwCLcBGAsYHQ/s1600/spinners.png]]
 
 ** Features
 
