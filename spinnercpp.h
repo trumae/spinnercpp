@@ -114,12 +114,12 @@ namespace spinnercpp {
       cout.flush();
       
       thr_ = thread([&](){
-	  int c = 0;
+	  int c = -1;
 	  auto chars = CharSets[chars_];
 	  int l = CharSets[chars_].size();
 	  
-	  while (active_)  { 
-	    cout << "\r" << prefix_ << chars[c++ % l] << suffix_;
+	  while (active_)  {
+	    cout << "\r" << prefix_ << chars[c = ++c % l] << suffix_;
 	    cout.flush();
 	    std::this_thread::sleep_for(delay_);
 	  }
