@@ -1,7 +1,5 @@
-add_executable(tests tests.cpp)
+add_executable(tests tests.cpp ../spinnercpp.h)
 
-target_link_libraries(tests
-	pthread
-)
+target_link_libraries(tests pthread)
 
 
