@@ -107,7 +107,7 @@ namespace spinnercpp {
       stop();
     }
 
-    virtual void start() {
+    void start() {
       active_ = true;
       
       cout << "\e[?25l";
@@ -126,7 +126,7 @@ namespace spinnercpp {
 	});
     }
     
-    virtual void stop() {
+    void stop() {
       if (active_) {	
 	active_ = false;
 	thr_.join();
